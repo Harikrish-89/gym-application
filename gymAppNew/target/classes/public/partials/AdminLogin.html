@@ -1,0 +1,36 @@
+<br/>
+
+<div class="mainDiv" style="background-color:#3b5998 ;">
+<div>
+<img src="/styles/images/administration.jpeg" height="300px" width="425px" alt="img">
+</div>
+<br/>
+<div>
+<h1 style="position:absolute;top:10%;left:35%;color:white"> Welcome Admin</h1>
+
+<br/>
+<br/>
+<form ng-submit="adminSubmit()" ng-hide="authenticated" class="loginForm">
+<font size="6" style="color:white">UserName: </font><input type="text" id="username" name="username" ng-model="credentials.userName"> 
+<br/>
+<br/>
+<font size="6"  style="color:white">Password: </font>&nbsp;&nbsp;&nbsp;<input type="password" id="password" name="password" ng-model="credentials.password"> 
+<br/>
+<br/>
+<button style="position:absolute;left:82%" type="submit"> <font size="3" style="color:white"><b>Log In</b></font> </button>
+</form>
+</div>
+<br/>
+<br/>
+<div ng-show="authenticated" class="mainActions">
+	<h3 style="color:white"> You can perform the below actions</h3>
+	<ul>
+	<li> <a style="color:white" href=#/getMemberDetails>Get member details</a></li>
+	<li> <a style="color:white" href=#/addNewMember>Add a new member to gym</a></li>
+	<li> <a style="color:white" href=#/generateReports>Generate Reports</a></li>
+	</ul>
+</div>
+<div ng-show="showError" class="myFlash innerDiv">
+	<h2>There are some problems in login</h2>
+</div>
+</div>

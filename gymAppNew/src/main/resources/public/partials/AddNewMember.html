@@ -1,0 +1,48 @@
+<div class="mainDiv">
+<div class="innerDiv" style="background-color:white;">
+<h2>Add New Member</h2>
+<form ng-submit="addNewMember()" ng-model="member">
+<table class="table">
+	<tr><td>Member Name:</td><td><input type="text" ng-model="member.name"/></td></tr>
+	<tr><td>Member Address:</td></tr>
+	<tr><td>Addr Line1:</td><td><input type="text" ng-model="member.addrOne"/></td></tr>
+	<tr><td>Addr Line2:</td><td><input type="text" ng-model="member.addrTwo"/></td></tr>
+	<tr><td>Addr Line3:</td><td><input type="text" ng-model="member.addrThree"/></td></tr>
+	<tr><td>City:</td><td><input type="text" ng-model="member.addrCity"/></td>
+		<td>Dist:</td><td><input type="text" ng-model="member.addrDist"/></td></tr>
+	<tr><td>State:</td><td><input type="text" ng-model="member.addrState"/></td> 
+		<td>Pin:</td><td><input type="number" ng-model="member.addrPin"/></td></tr>
+	<tr><td>Member Email:</td><td><input type="email" ng-model="member.email"/></td></tr>
+	<tr><td>Phone Number: </td><td><input type="number" ng-model="member.phone"/></td></tr>
+	<tr><td><label for="packageSelect">Package Type: </label></td>
+	<td><select name="packageSelect" id="packageSelect" ng-model="member.packageType">
+  					<option value="MONTHLY">MONTHLY</option>
+ 					 <option value="QUARTERLY">QUARTERLY</option>
+ 					 <option value="HALFYEARLY">HALFYEARLY</option>
+  					<option value="YEARLY">YEARLY</option>
+					</select></td></tr>
+	<tr><td>Package Recharge Date : </td><td><input type="date" ng-model="member.currPackRechargeDate"></td></tr>
+	<tr><td><button type="submit"><font style="color:white">Add Member</font></button></td></tr>
+	</table>
+</form>
+</div>
+<br/>
+<div ng-show="memberAdded" class="mySlideInDown innerDiv">
+	<h3 class="success">Member Added Successfully!!!!</h3><br/>
+	<ul ng-model="addedMember">
+		<li><span>Id: {{addedMember.id}}</span></li> 
+		<li><span>Name: {{addedMember.name}}</span></li>
+		<li><span>Email:{{addedMember.email}}</span></li>
+		<li><span>Phone:{{addedMember.phone}}</span></li>
+		<li><span>PackageType:{{addedMember.packageType}}</span></li>
+		<li><span>Status: {{addedMember.status}}</span></li>
+		<li><span>Address: {{addedMember.address}}</span></li>
+		<li><span>Current Package Recharge Date:{{addedMember.currPackRechargeDate | date:'medium'}}</span></li>
+		<li><span>Current Package End Date:{{addedMember.currPackageEndDate| date:'medium'}}</span></li>
+	</ul>
+</div>
+<div ng-show="showErrorMessage" class="myFlash innerDiv">
+	<h3 class="error">Unable to Add member because of some problem!!!!</h3>
+</div>
+
+</div>

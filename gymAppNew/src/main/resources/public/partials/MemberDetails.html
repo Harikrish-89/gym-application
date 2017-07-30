@@ -1,0 +1,131 @@
+<div class="mainDiv">
+<div class="innerDiv" style="background-color:#3b5998;">
+<table style="width: 100%">
+<tr>
+<td align="center">
+<form ng-submit="getMemberDetails()">
+<font size="3" style="color:white">Member Id:</font> <input type="number" ng-model="id"/>&nbsp; &nbsp;&nbsp;
+<button type="submit"><font style="color:white">Fetch</font></button>
+</form>
+</td>
+<td align="center">
+<form ng-submit="getLoginDetailsByDate()">
+<font size="3" style="color:white">Daily Login Details: </font><input type="date" ng-model="dateForDetails"/>&nbsp; &nbsp;&nbsp;
+<button type="submit"><font style="color:white">Show</font></button>
+</form>
+</td>
+<td align="center">
+<form ng-submit="searchMembersQuery()">
+<font size="3" style="color:white">Search Member: </font><input type="text" ng-model="filterQuery"/>&nbsp; &nbsp;&nbsp;
+<button type="submit"><font style="color:white">Show</font></button>
+</form>
+</td>
+</tr>
+</table>
+</div>
+<div ng-show="showMemberDetails" class="mySlideInDown innerDiv" >
+<ul ng-model="member" class="memberDetails" >
+<li><span>Id: {{member.id}}</span></li> 
+<li><span>Name: {{member.name}}</span></li>
+<li><span>Email:{{member.email}}</span></li>
+<li><span>Phone:{{member.Phone}}</span></li>
+<li><span>PackageType:{{member.packageType}}</span></li>
+<li><span>Status: {{member.status}}</span></li>
+<li><span>Address: {{member.address}}</span></li>
+<li><span>Current Package Recharge Date:{{member.currPackRechargeDate | date:'medium'}}</span></li>
+<li><span>Current Package End Date:{{member.currPackageEndDate| date:'medium'}}</span></li>
+</ul>
+<button ng-click="showPackageDetails()"><font style="color:white">Get Package History</font></button>&nbsp; &nbsp;&nbsp;
+<button ng-click="showLoginHistory()"><font style="color:white">Get Daily Login History</font></button>&nbsp; &nbsp;&nbsp;
+<button ng-click="renewMember()"><font style="color:white">Renew Member</font></button>&nbsp; &nbsp;&nbsp;
+<button ng-click="extendFormShow()"><font style="color:white">Extend Days</font></button>&nbsp; &nbsp;&nbsp;
+</div>
+<div ng-show="renewMemberShow" class="mySlideInDown innerDiv" >
+<br/>
+<br/>
+<form ng-submit="renewExistingMember()" >
+	<label for="packageSelect"> Select Package: </label>
+	<select name="packageSelect" id="packageSelect" ng-model="member.packageType">
+  					<option value="MONTHLY">MONTHLY</option>
+ 					 <option value="QUARTERLY">QUARTERLY</option>
+ 					 <option value="HALFYEARLY">HALFYEARLY</option>
+  					<option value="YEARLY">YEARLY</option>
+					</select>&nbsp; &nbsp;&nbsp;
+	Package Recharge Date : <input type="date" ng-model="member.currPackRechargeDate">
+	<button type="submit"><font style="color:white">Save</font></button>
+</form>
+</div>
+<div ng-show="extendDaysShow" class="mySlideInDown innerDiv">
+<br/>
+<br/>
+<form ng-submit="exdendMemberDays()">
+No Of Days to Extend: <input type="number" ng-model="extendDays"/>
+<button type="submit"><font style="color:white">Extend</font></button>
+</form>
+
+</div>
+
+
+<div ng-show="packageDetailsShow" class="myBounce innerDiv">
+	<table ng-table="memberPackageTable" class="table table-striped table-bordered">
+	<!-- <tr>
+			<th>Package Type</th><th>Package Recharge Date</th><th>Package End Date</th>
+	</tr> -->
+	<tr ng-repeat="memberPackDetail in memberPackageData"> 
+	<td data-title="'Package Type'">{{memberPackDetail.packageType}}</td>
+	<td data-title="'Package Recharge Date'">{{memberPackDetail.packReachDate | date:'dd-MM-yyyy'}}</td>
+	<td data-title="'Package End Date'">{{memberPackDetail.packageEndDate | date:'dd-MM-yyyy'}}</td>
+	<td data-title="'Recharge Type'">{{memberPackDetail.rechargeType}}</td>
+	</tr>
+	</table>
+	 <button 
+              ng-csv="csvMemberPackDetails" csv-header="getMemberPackHeader()" filename="memberPackageDetails.csv" 
+              ><font style="color:white">Export Report</font></button>
+</div>
+<div ng-show="memberDailyLoginShow"  class="myBounce innerDiv">
+	<table ng-table="memberDailyLoginTable" class="table table-striped table-bordered">
+	
+	<tr ng-repeat="memberLoginDetail in memberLoginData"> 
+	<td data-title="'Login Date'">{{memberLoginDetail.logInDate | date:'dd-MM-yyyy'}}</td>
+	<td data-title="'Login Time'">{{memberLoginDetail.logInTime | date:'mediumTime'}}</td>
+	<td data-title="'Logout Time'">{{memberLoginDetail.logOutTime | date:'mediumTime'}}</td>
+	</tr>
+	</table>
+	   <button 
+              ng-csv="csvMemberDailyLogin" csv-header="getMemberLoginHeader()" filename="memberLoginDetails.csv" 
+              ><font style="color:white">Export Report</font></button>
+</div>
+<div ng-show="dailyLoginDetailsShow"  class="myBounce innerDiv">
+	<table ng-table="dailyLoginDetailsTable" class="table table-striped table-bordered">
+	<tr ng-repeat="dailyLogin in dailyLoginDetailsData"> 
+	<td data-title="'Member Id'">{{dailyLogin.member.id}}</td>
+	<td data-title="'Login Time'">{{dailyLogin.logInTime | date:'mediumTime'}}</td>
+	<td data-title="'Logout Time'">{{dailyLogin.logOutTime | date:'mediumTime'}}</td>
+	</tr>
+	</table>
+	  <button 
+              ng-csv="csvDailyLogin" csv-header="getDailyLoginHeader()" filename="dailyLoginDetails.csv" 
+              ><font style="color:white">Export Report</font></button>
+</div>
+<div ng-show="searchMembersShow"  class="myBounce innerDiv">
+	<table ng-table="memberDetailsTable" class="table table-striped table-bordered">
+	<tr ng-repeat="member in allGymMembersData | filter:filterQuery "> 
+	<td data-title="'Member Id'">{{member.id}}</td>
+	<td data-title="'Name'">{{member.name}}</td>
+	<td data-title="'Email'">{{member.email}}</td>
+	<td data-title="'Phone'">{{member.phone}}</td>
+	<td data-title="'Address'">{{member.address}}</td>
+	<td data-title="'Package Type'">{{member.packageType}}</td>
+	<td data-title="'Status'">{{member.status}}</td>
+	<td data-title="'Current Package Recharge Date'">{{member.currPackRechargeDate | date:'medium'}}</td>
+	<td data-title="'Current Package End Date'">{{member.currPackageEndDate| date:'medium'}}</td>
+	</tr>
+	</table>
+</div>
+<div ng-show="detailsError" class="myFlash innerDiv">
+	<h3 class="error">{{detailsErrorMessage}}</h3>
+</div>
+<br/>
+<br/>
+<br/>
+</div>
