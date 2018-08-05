@@ -9,13 +9,16 @@ gymAppControllers.controller('dailyLoginController',['$scope','dailyLoginService
 		$scope.redirectToAdmin=function(){
 			$window.open("http://localhost:8080/adminIndex.html")
 		}
+		$scope.clearInputId=function(){
+			document.getElementById('memberDailyLoginForm').reset();
+		}
 		$scope.dailyLoginSubmit=function(){
 			dailyLoginService.dailyLogin(
 					{memberId:$scope.id},
 					function(resp){	
 						//$scope.memberDetails=true
 						if(resp.logIn){
-							var diff=resp.member.currPackageEndDate-(new Date()).getTime()
+							var diff=new Date(resp.member.currPackageEndDate)-(new Date()).getTime()
 							var noOfDays=Math.ceil(diff / (1000 * 3600 * 24)); 
 							if(noOfDays >0){
 								//$scope.message="Hi "+resp.member.name+" you have got "+ noOfDays +" days remaining!!!";
@@ -144,7 +147,14 @@ gymAppControllers.controller('memberDetailsController',['$rootScope','$scope','$
 								resp.currPackRechargeDate= new Date(resp.currPackRechargeDate);
 								resp.currPackageEndDate=new Date(resp.currPackageEndDate);
 								$scope.member=resp;
-							
+								var address = $scope.member.address.split(',');
+								$scope.member.addrOne =address[0];
+								$scope.member.addrTwo =address[1];
+								$scope.member.addrThree=address[2];
+								$scope.member.addrCity =address[3];
+								$scope.member.addrDist =address[4];
+								$scope.member.addrState=address[5];
+								$scope.member.addrPin=address[6];
 							},function(error){
 								$scope.member={};
 								$scope.detailsError=true;

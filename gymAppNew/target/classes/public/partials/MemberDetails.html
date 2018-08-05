@@ -37,22 +37,35 @@
 </ul>
 <button ng-click="showPackageDetails()"><font style="color:white">Get Package History</font></button>&nbsp; &nbsp;&nbsp;
 <button ng-click="showLoginHistory()"><font style="color:white">Get Daily Login History</font></button>&nbsp; &nbsp;&nbsp;
-<button ng-click="renewMember()"><font style="color:white">Renew Member</font></button>&nbsp; &nbsp;&nbsp;
+<button ng-click="renewMember()"><font style="color:white">Renew/Edit Member</font></button>&nbsp; &nbsp;&nbsp;
 <button ng-click="extendFormShow()"><font style="color:white">Extend Days</font></button>&nbsp; &nbsp;&nbsp;
 </div>
 <div ng-show="renewMemberShow" class="mySlideInDown innerDiv" >
 <br/>
 <br/>
 <form ng-submit="renewExistingMember()" >
-	<label for="packageSelect"> Select Package: </label>
-	<select name="packageSelect" id="packageSelect" ng-model="member.packageType">
+<table class="table">
+	<tr><td>Member Name:</td><td><input type="text" ng-model="member.name"/></td></tr>
+	<tr><td>Member Address:</td></tr>
+	<tr><td>Addr Line1:</td><td><input type="text" ng-model="member.addrOne"/></td></tr>
+	<tr><td>Addr Line2:</td><td><input type="text" ng-model="member.addrTwo"/></td></tr>
+	<tr><td>Addr Line3:</td><td><input type="text" ng-model="member.addrThree"/></td></tr>
+	<tr><td>City:</td><td><input type="text" ng-model="member.addrCity"/></td>
+		<td>Dist:</td><td><input type="text" ng-model="member.addrDist"/></td></tr>
+	<tr><td>State:</td><td><input type="text" ng-model="member.addrState"/></td> 
+		<td>Pin:</td><td><input type="number" ng-model="member.addrPin"/></td></tr>
+	<tr><td>Member Email:</td><td><input type="email" ng-model="member.email"/></td></tr>
+	<tr><td>Phone Number: </td><td><input type="number" ng-model="member.phone"/></td></tr>
+	<tr><td><label for="packageSelect">Package Type: </label></td>
+	<td><select name="packageSelect" id="packageSelect" ng-model="member.packageType">
   					<option value="MONTHLY">MONTHLY</option>
  					 <option value="QUARTERLY">QUARTERLY</option>
  					 <option value="HALFYEARLY">HALFYEARLY</option>
   					<option value="YEARLY">YEARLY</option>
-					</select>&nbsp; &nbsp;&nbsp;
-	Package Recharge Date : <input type="date" ng-model="member.currPackRechargeDate">
-	<button type="submit"><font style="color:white">Save</font></button>
+					</select></td></tr>
+	<tr><td>Package Recharge Date : </td><td><input type="date" ng-model="member.currPackRechargeDate"></td></tr>
+	<tr><td><button type="submit"><font style="color:white">Save</font></button></td></tr>
+	</table>
 </form>
 </div>
 <div ng-show="extendDaysShow" class="mySlideInDown innerDiv">
