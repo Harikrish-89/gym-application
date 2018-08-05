@@ -1,4 +1,4 @@
-package com.app.gym.data.jpa.service;
+/*package com.app.gym.data.jpa.service;
 
 import static org.junit.Assert.assertTrue;
 
@@ -31,7 +31,7 @@ public class MemberDailyLoginRepositoryIntegrationTests {
 	@Autowired
 	private MemberRepository memberRepository;
 	
-	/*@Test
+	@Test
 	public void testInsertion() throws ParseException{
 		Member member = this.memberRepository.findMemberById(50L);
 		MemberDailyLogin memberLogin= new MemberDailyLogin();
@@ -45,7 +45,7 @@ public class MemberDailyLoginRepositoryIntegrationTests {
 		MemberDailyLogin insertedval=this.dailyLoginReporsitory.save(memberLogin);
 		assertTrue(insertedval.getMember().getId()==50);
 		
-	}*/
+	}
 	@Test
 	public void testExtraction() throws ParseException{
 		Member member = this.memberRepository.findMemberById(1110L);
@@ -59,3 +59,4 @@ public class MemberDailyLoginRepositoryIntegrationTests {
 		assertTrue(dailyLogin.size()==0);
 	}
 }
+*/

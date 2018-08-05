@@ -1,4 +1,4 @@
-package com.app.gym.data.jpa.service;
+/*package com.app.gym.data.jpa.service;
 
 import static org.junit.Assert.assertTrue;
 
@@ -77,3 +77,4 @@ public class MemberServiceTest {
 
 	
 }
+*/

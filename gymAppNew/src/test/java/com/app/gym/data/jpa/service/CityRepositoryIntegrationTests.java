@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 package com.app.gym.data.jpa.service;
 
 import org.junit.Test;
@@ -30,16 +30,16 @@ import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
-/**
+*//**
  * Integration tests for {@link CityRepository}.
  * 
  * @author Oliver Gierke
- */
+ *//*
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = SampleDataJpaApplication.class)
 public class CityRepositoryIntegrationTests {
 
-/*	@Autowired
+	@Autowired
 	CityRepository repository;
 
 	@Test
@@ -47,5 +47,6 @@ public class CityRepositoryIntegrationTests {
 
 		Page<City> cities = this.repository.findAll(new PageRequest(0, 10));
 		assertThat(cities.getTotalElements(), is(greaterThan(20L)));
-	}*/
+	}
 }
+*/

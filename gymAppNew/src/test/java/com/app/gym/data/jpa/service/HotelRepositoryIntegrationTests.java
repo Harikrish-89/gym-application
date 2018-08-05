@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 package com.app.gym.data.jpa.service;
 
 import java.util.List;
@@ -27,26 +27,26 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.app.gym.data.jpa.SampleDataJpaApplication;
-/*import com.app.gym.data.jpa.domain.City;
+import com.app.gym.data.jpa.domain.City;
 import com.app.gym.data.jpa.domain.Hotel;
 import com.app.gym.data.jpa.domain.HotelSummary;
 import com.app.gym.data.jpa.domain.Rating;
-import com.app.gym.data.jpa.domain.RatingCount;*/
+import com.app.gym.data.jpa.domain.RatingCount;
 
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
-/**
+*//**
  * Integration tests for {@link HotelRepository}.
  * 
  * @author Oliver Gierke
- */
+ *//*
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = SampleDataJpaApplication.class)
 public class HotelRepositoryIntegrationTests {
-/*
+
 	@Autowired
 	CityRepository cityRepository;
 	@Autowired
@@ -69,5 +69,6 @@ public class HotelRepositoryIntegrationTests {
 		assertThat(counts, hasSize(1));
 		assertThat(counts.get(0).getRating(), is(Rating.AVERAGE));
 		assertThat(counts.get(0).getCount(), is(greaterThan(1L)));
-	}*/
+	}
 }
+*/
