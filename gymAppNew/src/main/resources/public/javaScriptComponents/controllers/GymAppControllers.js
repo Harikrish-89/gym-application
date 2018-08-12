@@ -352,14 +352,15 @@ gymAppControllers.controller('memberDetailsController',['$rootScope','$scope','$
 						$scope.packageDetailsShow=false;
 						$scope.searchMembersShow=true;
 						$scope.allGymMembers=resp;
+						var filteredData = $filter('filter')($scope.allGymMembers, $scope.filterQuery);
 						$scope.memberDetailsTable= new ngTableParams({
 			                page: 1,
 			                count: 10
 			            }, {
-			                total: $scope.allGymMembers.length, 
+			                total: filteredData.length, 
 			                getData: function ($defer, params) {
-			                    $scope.allGymMembersData = $scope.allGymMembers.slice((params.page() - 1) * params.count(), params.page() * params.count());
-			                    $defer.resolve($scope.allGymMembersData);
+			                	$scope.filteredGymMembersData = filteredData.slice((params.page() - 1) * params.count(), params.page() * params.count());
+			                    $defer.resolve($scope.filteredGymMembersData);
 			                }
 			            });
 					},function(error){
