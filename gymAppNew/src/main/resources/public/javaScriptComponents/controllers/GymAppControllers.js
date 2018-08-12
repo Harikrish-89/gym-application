@@ -298,6 +298,10 @@ gymAppControllers.controller('memberDetailsController',['$rootScope','$scope','$
 				}
 			
 				$scope.renewExistingMember=function(){
+					var address=$scope.member.addrOne +","+$scope.member.addrTwo +","+$scope.member.addrThree+
+					","+$scope.member.addrCity +","+$scope.member.addrDist +","+$scope.member.addrState
+					+ ","+$scope.member.addrPin;
+					$scope.member.address=address;
 					renewMemberService.postMember($scope.member,function(resp){
 						$scope.packageDetailsShow=false;
 						$scope.renewMemberShow=false;
