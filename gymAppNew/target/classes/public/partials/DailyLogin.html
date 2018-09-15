@@ -6,7 +6,7 @@
 <form ng-submit="dailyLoginSubmit()" class="memberDetailsForm" id="memberDailyLoginForm">
 
 <p style="height:20%;width:75%;font-size:250%;color:black;font-weight: bold;">Member Id</p>
-<input id="memberId"  onfocus="this.value=''" type="number" style="height:20%;width:50%;font-size:200%" ng-model="id"/>
+<input id="memberId" required  onfocus="this.value=''" type="number" style="height:20%;width:50%;font-size:200%" ng-model="id"/>
 </br>
 </br>
 <button style="height:20%;width:45%;font-size:150%;color:white;font-weight: bold;text-align: center;background-color:#696969;" type="submit" ng-click="clearInputId()">Log In</button>
