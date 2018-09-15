@@ -11,10 +11,10 @@
 <br/>
 <br/>
 <form ng-submit="adminSubmit()" ng-hide="authenticated" class="loginForm">
-<font size="6" style="color:white">UserName: </font><input type="text" id="username" name="username" ng-model="credentials.userName"> 
+<font size="6" style="color:white">UserName: </font><input type="text" id="username" name="username" required ng-model="credentials.userName"> 
 <br/>
 <br/>
-<font size="6"  style="color:white">Password: </font>&nbsp;&nbsp;&nbsp;<input type="password" id="password" name="password" ng-model="credentials.password"> 
+<font size="6"  style="color:white">Password: </font>&nbsp;&nbsp;&nbsp;<input type="password" id="password" required name="password" ng-model="credentials.password"> 
 <br/>
 <br/>
 <button style="position:absolute;left:82%" type="submit"> <font size="3" style="color:white"><b>Log In</b></font> </button>
