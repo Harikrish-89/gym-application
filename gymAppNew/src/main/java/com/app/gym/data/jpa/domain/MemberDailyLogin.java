@@ -15,13 +15,16 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name="MEMBER_DAILY_LOGIN")
 public class MemberDailyLogin implements Serializable {
 	
 	@Id
 	//@SequenceGenerator(name="mem_daily_login_seq", sequenceName="MEMBER_DAILY_LOGIN_SEQ",allocationSize=1,initialValue=1)
-	@GeneratedValue()
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+	@GenericGenerator(name = "native", strategy = "native")
 	@Column(name="ID")
 	private Long id;
 	

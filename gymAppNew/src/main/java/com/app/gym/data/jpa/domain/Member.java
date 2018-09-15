@@ -16,52 +16,55 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
-@Table(name="MEMBERS")
+@Table(name = "MEMBERS")
 public class Member implements Serializable {
-	
+
 	@Id
-	//@SequenceGenerator(name="mem_seq", sequenceName="MEMBER_SEQ",allocationSize=1,initialValue=1)
-	@GeneratedValue()
-	@Column(name="ID")
+	// @SequenceGenerator(name="mem_seq",
+	// sequenceName="MEMBER_SEQ",allocationSize=1,initialValue=1)
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+	@GenericGenerator(name = "native", strategy = "native")
+	@Column(name = "ID")
 	private Long id;
-	
-	@Column(name="NAME")
+
+	@Column(name = "NAME")
 	private String name;
-	
-	@Column(name="ADDRESS")
+
+	@Column(name = "ADDRESS")
 	private String Address;
 
-	@Column(name="EMAIL")
+	@Column(name = "EMAIL")
 	private String email;
-	
-	@Column(name="PACKAGE_TYPE")
-	private String packageType;
-	
-	@Column(name="CURRENT_PACKAGE_RECHARGE_DATE")
-	private Date currPackRechargeDate;
-	
-	@Column(name="CURRENT_PACKAGE_END_DATE")
-	private Date currPackageEndDate;
-	
-	@Column(name="STATUS")
-	private String status;
-	
-	@Column(name="PHONE")
-	private Long phone;
-	/*@OneToMany(fetch=FetchType.LAZY,cascade=CascadeType.ALL,mappedBy="member")
-	@JsonManagedReference
-	private Set<MemberHistory> memberHistorySet;
-	
-	public Set<MemberHistory> getMemberHistorySet() {
-		return memberHistorySet;
-	}
 
-	public void setMemberHistorySet(Set<MemberHistory> memberHistorySet) {
-		this.memberHistorySet = memberHistorySet;
-	}*/
+	@Column(name = "PACKAGE_TYPE")
+	private String packageType;
+
+	@Column(name = "CURRENT_PACKAGE_RECHARGE_DATE")
+	private Date currPackRechargeDate;
+
+	@Column(name = "CURRENT_PACKAGE_END_DATE")
+	private Date currPackageEndDate;
+
+	@Column(name = "STATUS")
+	private String status;
+
+	@Column(name = "PHONE")
+	private Long phone;
+	/*
+	 * @OneToMany(fetch=FetchType.LAZY,cascade=CascadeType.ALL,mappedBy="member")
+	 * 
+	 * @JsonManagedReference private Set<MemberHistory> memberHistorySet;
+	 * 
+	 * public Set<MemberHistory> getMemberHistorySet() { return memberHistorySet; }
+	 * 
+	 * public void setMemberHistorySet(Set<MemberHistory> memberHistorySet) {
+	 * this.memberHistorySet = memberHistorySet; }
+	 */
 
 	public Long getPhone() {
 		return phone;
@@ -135,5 +138,4 @@ public class Member implements Serializable {
 		this.currPackageEndDate = currPackageEndDate;
 	}
 
-	
 }

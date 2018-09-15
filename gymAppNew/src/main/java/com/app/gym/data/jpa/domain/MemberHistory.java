@@ -15,6 +15,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
@@ -23,7 +25,8 @@ public class MemberHistory implements Serializable {
 	
 	@Id
 	//@SequenceGenerator(name="mem_hist_seq", sequenceName="MEMBER_HIST_SEQ",allocationSize=1,initialValue=1)
-	@GeneratedValue()
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+	@GenericGenerator(name = "native", strategy = "native")
 	@Column(name="ID")
 	private Long id;
 	
