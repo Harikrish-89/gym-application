@@ -1,0 +1,15 @@
+{
+  "background_color": "purple",
+  "description": "Gym app",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "styles/images/daily.jpg",
+      "sizes": "192x192",
+      "type": "jpg"
+    }
+  ],
+  "name": "Gym App",
+  "short_name": "Gym",
+  "start_url": "index.html"
+}

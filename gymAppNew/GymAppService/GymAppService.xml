@@ -1,0 +1,9 @@
+<service>
+  <id>GymApp</id>
+  <name>GymApp Service</name>
+  <description>Gym App service.</description>
+  <executable>java</executable>
+  <arguments>-jar "%BASE%\gymAppNew-1.0-SNAPSHOT.jar"</arguments>
+  <logmode>rotate</logmode>
+  <stopparentprocessfirst>true</stopparentprocessfirst>
+</service>
