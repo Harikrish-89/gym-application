@@ -1,37 +1,44 @@
 <!doctype html>
-<html lang="en" ng-app="gymApp" style="background-color:#F0FFF0;height:100%">
+<html lang="en" ng-app="gymApp"
+	style="background-color: #F0FFF0; height: 100%">
 <head>
- <link rel="stylesheet" type="text/css" href="styles/myStyles.css" media="screen" />
- <link rel="stylesheet" type="text/css" href="styles/animate.css" media="screen" />
- <link rel="stylesheet" href="bootstrap-3.3.1/dist/css/bootstrap.min.css" />
- <link rel="stylesheet" href="ng-table-master/dist/ng-table.min.css" />
- <link rel="stylesheet" href="/bower-material-master/angular-material.css">
-  <script src="angular-1.4.8/angular.js"></script>
-  <script src="angular-1.4.8/angular-animate.js"></script>
-  <script src="angular-1.4.8/angular-aria.js"></script>
-  <script src="angular-1.4.8/angular-messages.js"></script>
-  <script src="angular-1.4.8/angular-sanitize.min.js"></script>
-  <script src="angular-1.4.8/angular-route.js"></script>
-  <script src="angular-1.4.8/angular-resource.js"></script>
-  <script src="angular-1.4.8/angular-idle.min.js"></script>
-  <script src="/bower-material-master/angular-material.js"></script>
-  <script src="javaScriptComponents/mainApp.js"></script>
-  <script src="ng-table-master/dist/ng-table.min.js"></script>
-   <script src="ng-csv-master/build/ng-csv.js"></script>
- <script src="javaScriptComponents/controllers/GymAppControllers.js"></script>
-  <script src="javaScriptComponents/services/GymAppServices.js"></script> 
-  <script src="index.js"></script> 
+<link rel="stylesheet" type="text/css" href="styles/myStyles.css"
+	media="screen" />
+<link rel="stylesheet" type="text/css" href="styles/animate.css"
+	media="screen" />
+<link rel="stylesheet" href="bootstrap-3.3.1/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="ng-table-master/dist/ng-table.min.css" />
+<link rel="stylesheet"
+	href="/bower-material-master/angular-material.css">
+<script src="angular-1.4.8/angular.js"></script>
+<script src="angular-1.4.8/angular-animate.js"></script>
+<script src="angular-1.4.8/angular-aria.js"></script>
+<script src="angular-1.4.8/angular-messages.js"></script>
+<script src="angular-1.4.8/angular-sanitize.min.js"></script>
+<script src="angular-1.4.8/angular-route.js"></script>
+<script src="angular-1.4.8/angular-resource.js"></script>
+<script src="angular-1.4.8/angular-idle.min.js"></script>
+<script src="/bower-material-master/angular-material.js"></script>
+<script src="javaScriptComponents/mainApp.js"></script>
+<script src="ng-table-master/dist/ng-table.min.js"></script>
+<script src="ng-csv-master/build/ng-csv.js"></script>
+<script src="javaScriptComponents/controllers/GymAppControllers.js"></script>
+<script src="javaScriptComponents/services/GymAppServices.js"></script>
+<script src="index.js"></script>
 </head>
-<body style="background-color:#F0FFF0;height:100%" >
-<div ng-controller="logoutController" style="background-color: olive;">
-	<a ng-show="showHome" class="home" href="#/adminLogin"><h3><font style="color:navy">Home</font></h3></a> 
-	<a ng-show="showLogout" class="logOut" href="" ng-click="performLogOut()"><h3><font style="color:navy">Logout</font></h3></a>
-  <button class="add-button" style="display: block">Add to home screen</button>
-</div>
-</br>
-</br>
-  <div ng-view></div>
-  
+<body style="background-color: #F0FFF0; height: 100%">
+	<div ng-controller="logoutController" style="background-color: olive;">
+		<a ng-show="showHome" class="home" href="#/adminLogin"><h3>
+				<font style="color: navy">Home</font>
+			</h3></a> <a ng-show="showLogout" class="logOut" href=""
+			ng-click="performLogOut()"><h3>
+				<font style="color: navy">Logout</font>
+			</h3></a>
+	</div>
+	</br>
+	</br>
+	<div ng-view></div>
+
 
 </body>
 </html>

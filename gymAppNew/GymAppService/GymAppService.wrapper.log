@@ -222,3 +222,41 @@
 2021-12-29 20:57:08,991 INFO  - Starting java -jar "C:\Users\harik\OneDrive\Documents\gym-application\gymAppNew\GymAppService\gymAppNew-1.0-SNAPSHOT.jar"
 2021-12-29 20:57:09,046 INFO  - Started process 20728
 2021-12-29 20:57:09,079 DEBUG - Forwarding logs of the process System.Diagnostics.Process (java) to WinSW.SizeBasedRollingLogAppender
+2021-12-30 11:15:58,799 DEBUG - Starting WinSW in console mode
+2021-12-30 11:16:03,556 DEBUG - Starting WinSW in console mode
+2021-12-30 11:16:03,635 INFO  - Stopping service 'GymApp Service (GymApp)'...
+2021-12-30 11:16:03,662 INFO  - Service 'GymApp Service (GymApp)' stopped successfully.
+2021-12-30 11:16:03,674 INFO  - Stopping GymApp
+2021-12-30 11:16:03,678 DEBUG - ProcessKill 20728
+2021-12-30 11:16:03,687 DEBUG - Stopping process 20728...
+2021-12-30 11:16:03,715 DEBUG - Process 20728 canceled with code -1073741510.
+2021-12-30 11:16:03,734 INFO  - Finished GymApp
+2021-12-30 11:16:11,601 DEBUG - Starting WinSW in console mode
+2021-12-30 11:16:14,957 DEBUG - Starting WinSW in console mode
+2021-12-30 11:16:15,043 INFO  - Uninstalling service 'GymApp Service (GymApp)'...
+2021-12-30 11:16:15,064 INFO  - Service 'GymApp Service (GymApp)' was uninstalled successfully.
+2021-12-30 11:16:43,553 DEBUG - Starting WinSW in console mode
+2021-12-30 11:16:47,634 DEBUG - Starting WinSW in console mode
+2021-12-30 11:16:47,704 INFO  - Installing service 'GymApp Service (GymApp)'...
+2021-12-30 11:16:47,770 INFO  - Service 'GymApp Service (GymApp)' was installed successfully.
+2021-12-30 11:16:53,265 DEBUG - Starting WinSW in console mode
+2021-12-30 11:16:56,785 DEBUG - Starting WinSW in console mode
+2021-12-30 11:16:56,858 INFO  - Starting service 'GymApp Service (GymApp)'...
+2021-12-30 11:16:57,642 DEBUG - Starting WinSW in service mode
+2021-12-30 11:16:57,685 INFO  - Service 'GymApp Service (GymApp)' started successfully.
+2021-12-30 11:16:57,868 INFO  - Starting java -jar "C:\Users\harik\OneDrive\Documents\gym-application\gymAppNew\GymAppService\gymAppNew-1.0-SNAPSHOT.jar"
+2021-12-30 11:16:57,909 INFO  - Started process 18704
+2021-12-30 11:16:57,941 DEBUG - Forwarding logs of the process System.Diagnostics.Process (java) to WinSW.SizeBasedRollingLogAppender
+2021-12-30 11:21:05,292 DEBUG - Starting WinSW in console mode
+2021-12-30 11:21:09,791 DEBUG - Starting WinSW in console mode
+2021-12-30 11:21:09,848 INFO  - Stopping service 'GymApp Service (GymApp)'...
+2021-12-30 11:21:09,872 INFO  - Service 'GymApp Service (GymApp)' stopped successfully.
+2021-12-30 11:21:09,875 INFO  - Stopping GymApp
+2021-12-30 11:21:09,876 DEBUG - ProcessKill 18704
+2021-12-30 11:21:09,882 DEBUG - Stopping process 18704...
+2021-12-30 11:21:09,899 DEBUG - Process 18704 canceled with code -1073741510.
+2021-12-30 11:21:09,909 INFO  - Finished GymApp
+2021-12-30 11:21:14,512 DEBUG - Starting WinSW in console mode
+2021-12-30 11:21:18,366 DEBUG - Starting WinSW in console mode
+2021-12-30 11:21:18,445 INFO  - Uninstalling service 'GymApp Service (GymApp)'...
+2021-12-30 11:21:18,461 INFO  - Service 'GymApp Service (GymApp)' was uninstalled successfully.
